@@ -15,7 +15,7 @@ export default function Nav() {
   // URLs de redes sociales (podrían venir de un CMS o configuración)
   const socialLinks = {
     facebook: "https://www.facebook.com/kmilo.sb.5", // Reemplaza con tu URL
-    instagram: "https://www.instagram.com/machete_r47/" // Reemplaza con tu URL
+    instagram: "https://www.instagram.com/machete_r47/s" // Reemplaza con tu URL
   };
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -142,7 +142,7 @@ export default function Nav() {
             <div className="p-4 border-b">
             <Link href="/" className="flex items-center">
             <Image
-              src="/logo.jpg"
+              src="/logomach.jpg"
               alt="Ritzi"
               width={160}
               height={40}

@@ -6,10 +6,10 @@ import { ApiSlideResponse, getHomeSlides } from "@/lib/sliderService";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Inicio | Nomada Screenshop - Viste Premium en Colombia',
+  title: 'Inicio | Machete skateshop - Viste Premium en Colombia',
   description: 'Descubre nuestra colección exclusiva de sneakers para hombre y mujer. Envíos a todo Colombia.',
   alternates: {
-    canonical: 'https://nomadashop.com.co/',
+    canonical: 'https://machetetienda.vercel.app/',
   },
   keywords: ['sneakers exclusivos', 'zapatillas premium Colombia', 'calzado deportivo de lujo'],
 }
@@ -37,13 +37,14 @@ interface CategoryProducts {
 
 export default async function Home() {
   // Obtener todos los datos en paralelo
-  const [slides, nikeProducts, dcProducts, vansProducts, adidasProducts, runningProducts] = await Promise.all([
+  const [slides, nikeProducts, dcProducts, vansProducts, adidasProducts, runningProducts, kidsProducts] = await Promise.all([
     getHomeSlides(),
     getProductsByCategory(16), // Nike SB
     getProductsByCategory(17), // DC shoes
     getProductsByCategory(20), // Vans
     getProductsByCategory(18), // Adidas
     getProductsByCategory(21), // Running
+    getProductsByCategory(27)  //kids
   ]);
   console.log('Datos de slides:', slides);
 // En la transformación de banners, añade el tipo ApiSlideResponse:
@@ -60,7 +61,8 @@ const banners = slides.map((slide: ApiSlideResponse) => ({
     { id: "dc", name: "DC Shoes", products: dcProducts },
     { id: "vans", name: "Vans", products: vansProducts },
     { id: "adidas", name: "Adidas", products: adidasProducts },
-    { id: "running", name: "Running", products: runningProducts }
+    { id: "running", name: "Running", products: runningProducts },
+    { id: "kids", name: "kids", products: kidsProducts }
   ];
 
   return (

@@ -12,8 +12,8 @@ export default function robots(): MetadataRoute.Robots {
         '/admin/'
       ],
     },
-    sitemap: 'https://nomadashop.com.co/sitemap.xml',
+    sitemap: 'https://machetetienda.vercel.app//sitemap.xml',
     // Opcional: Host alternativo (si tienes dominio primario)
-    host: 'https://nomadashop.com.co/'
+    host: 'https://machetetienda.vercel.app/'
   }
 }
